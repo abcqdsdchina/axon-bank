@@ -43,7 +43,7 @@ public class AxonConfig {
     }
 
     @Bean
-    public SagaConfiguration bankTransferManagementSagaConfiguration() {
+    public SagaConfiguration<BankTransferManagementSaga> bankTransferManagementSagaConfiguration() {
         return SagaConfiguration.trackingSagaManager(BankTransferManagementSaga.class);
     }
 
