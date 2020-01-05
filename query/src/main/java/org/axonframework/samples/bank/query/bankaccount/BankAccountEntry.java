@@ -34,6 +34,10 @@ public class BankAccountEntry {
     public BankAccountEntry() {
     }
 
+    public BankAccountEntry(String axonBankAccountId) {
+        this.axonBankAccountId = axonBankAccountId;
+    }
+
     public BankAccountEntry(String axonBankAccountId, long balance, long overdraftLimit) {
         this.axonBankAccountId = axonBankAccountId;
         this.balance = balance;

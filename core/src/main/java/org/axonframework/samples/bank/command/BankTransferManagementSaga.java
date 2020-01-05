@@ -18,9 +18,9 @@ package org.axonframework.samples.bank.command;
 
 import org.axonframework.commandhandling.CommandBus;
 import org.axonframework.commandhandling.callbacks.LoggingCallback;
-import org.axonframework.eventhandling.saga.EndSaga;
-import org.axonframework.eventhandling.saga.SagaEventHandler;
-import org.axonframework.eventhandling.saga.StartSaga;
+import org.axonframework.modelling.saga.EndSaga;
+import org.axonframework.modelling.saga.SagaEventHandler;
+import org.axonframework.modelling.saga.StartSaga;
 import org.axonframework.samples.bank.api.bankaccount.*;
 import org.axonframework.samples.bank.api.banktransfer.BankTransferCreatedEvent;
 import org.axonframework.samples.bank.api.banktransfer.MarkBankTransferCompletedCommand;

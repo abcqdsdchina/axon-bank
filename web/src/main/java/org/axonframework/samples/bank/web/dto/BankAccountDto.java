@@ -16,10 +16,11 @@
 
 package org.axonframework.samples.bank.web.dto;
 
-import lombok.Value;
+import lombok.Data;
 
-@Value
+@Data
 public class BankAccountDto {
 
     private long overdraftLimit;
+
 }

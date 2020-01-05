@@ -42,11 +42,6 @@ public class AxonConfig {
         return new BankAccountCommandHandler(axonConfiguration.repository(BankAccount.class), eventBus);
     }
 
-    @Bean
-    public SagaConfiguration<BankTransferManagementSaga> bankTransferManagementSagaConfiguration() {
-        return SagaConfiguration.trackingSagaManager(BankTransferManagementSaga.class);
-    }
-
     @Autowired
     public void configure(@Qualifier("localSegment") SimpleCommandBus simpleCommandBus) {
         simpleCommandBus.registerDispatchInterceptor(new BeanValidationInterceptor<>());

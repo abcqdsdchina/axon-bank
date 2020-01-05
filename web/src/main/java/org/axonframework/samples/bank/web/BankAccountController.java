@@ -25,6 +25,7 @@ import org.axonframework.samples.bank.query.bankaccount.BankAccountRepository;
 import org.axonframework.samples.bank.web.dto.BankAccountDto;
 import org.axonframework.samples.bank.web.dto.DepositDto;
 import org.axonframework.samples.bank.web.dto.WithdrawalDto;
+import org.springframework.data.domain.Example;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.annotation.SubscribeMapping;
@@ -51,7 +52,7 @@ public class BankAccountController {
 
     @SubscribeMapping("/{id}")
     public BankAccountEntry get(@DestinationVariable String id) {
-        return bankAccountRepository.findOne(id);
+        return bankAccountRepository.findOne(Example.of(new BankAccountEntry(id))).orElse(null);
     }
 
     @MessageMapping("/create")

@@ -22,6 +22,7 @@ import org.axonframework.samples.bank.api.banktransfer.CreateBankTransferCommand
 import org.axonframework.samples.bank.query.banktransfer.BankTransferEntry;
 import org.axonframework.samples.bank.query.banktransfer.BankTransferRepository;
 import org.axonframework.samples.bank.web.dto.BankTransferDto;
+import org.springframework.data.domain.Example;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.annotation.SubscribeMapping;
@@ -50,7 +51,7 @@ public class BankTransferController {
     @MessageMapping("/bank-transfers/{id}")
     public BankTransferEntry get(@DestinationVariable String id) {
         log.info("Retrieve bank transfer with id {}", id);
-        return bankTransferRepository.findOne(id);
+        return bankTransferRepository.findOne(Example.of(new BankTransferEntry(id))).orElse(null);
     }
 
     @MessageMapping("/bank-transfers/create")

@@ -16,11 +16,9 @@
 
 package org.axonframework.samples.bank.web.dto;
 
-import lombok.ToString;
-import lombok.Value;
+import lombok.Data;
 
-@Value
-@ToString
+@Data
 public class BankTransferDto {
 
     private String sourceBankAccountId;

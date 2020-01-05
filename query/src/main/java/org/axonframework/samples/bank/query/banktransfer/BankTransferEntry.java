@@ -36,6 +36,10 @@ public class BankTransferEntry {
     public BankTransferEntry() {
     }
 
+    public BankTransferEntry(String axonBankTransferId) {
+        this.axonBankTransferId = axonBankTransferId;
+    }
+
     public BankTransferEntry(String axonBankTransferId, String sourceBankAccountId, String destinationBankAccountId, long amount) {
         this.axonBankTransferId = axonBankTransferId;
         this.sourceBankAccountId = sourceBankAccountId;
