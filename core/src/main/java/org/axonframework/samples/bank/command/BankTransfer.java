@@ -28,7 +28,7 @@ import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 public class BankTransfer {
 
     @AggregateIdentifier
-    private String BankTransferId;
+    private String bankTransferId;
     private String sourceBankAccountId;
     private String destinationBankAccountId;
     private long amount;
@@ -58,7 +58,7 @@ public class BankTransfer {
 
     @EventHandler
     public void on(BankTransferCreatedEvent event) throws Exception {
-        this.BankTransferId = event.getBankTransferId();
+        this.bankTransferId = event.getBankTransferId();
         this.sourceBankAccountId = event.getSourceBankAccountId();
         this.destinationBankAccountId = event.getDestinationBankAccountId();
         this.amount = event.getAmount();
