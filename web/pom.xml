@@ -113,6 +113,11 @@
             <artifactId>axon-bank-query</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.hynnet</groupId>
+            <artifactId>jimi-pro</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>

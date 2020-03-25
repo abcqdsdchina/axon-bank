@@ -57,6 +57,11 @@
             <name>Spring</name>
             <url>https://maven.aliyun.com/repository/spring</url>
         </repository>
+        <repository>
+            <id>spring-lib</id>
+            <name>Spring Lib</name>
+            <url>https://maven.atlassian.com/3rdparty/</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -76,12 +81,6 @@
             <groupId>org.axonframework</groupId>
             <artifactId>axon-spring-boot-starter</artifactId>
             <version>${axon.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.axonframework</groupId>
-                    <artifactId>axon-server-connector</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
